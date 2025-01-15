@@ -15,8 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('edd.urls')), #Todos os links da edd vão ser carregados aqui
+
+   #path('edd/', include('edd.urls')), Todos os links da edd vão ser carregados aqui, porém com o /edd na frente (por exemplo ambitech.com.br/edd/link)
+
 ]
