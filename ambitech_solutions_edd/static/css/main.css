@@ -1,3 +1,54 @@
+.navbar {
+    position: fixed; /* Fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura */
+    z-index: 1000; /* Certifica-se de que fica acima do conteúdo */
+    padding: 10px; 20px; 20px; 20px; /* Espaçamento interno dos lados */
+    display: flex; /* Usa flexbox para organizar os itens */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Deixa a logo à esquerda e o menu à direita */
+    background-color: #004d56
+
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove marcadores */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Itens em linha */
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.navbar li {
+    display: inline; /* Mantém itens em linha */
+}
+
+.navbar a {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Remove sublinhado */
+    color: white; /* Cor padrão do texto */
+    font-family: 'Poppins', sans-serif; /* Usa a fonte Poppins */
+    font-weight: 500; /* Peso médio */
+    padding: 8px 12px; /* Espaçamento interno nos links */
+    border-radius: 4px; /* Bordas arredondadas */
+    transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.navbar a:hover {
+    color: #00bb74; /* Cor ao passar o mouse */
+}
+
+.logo {
+    height: 50px; /* Ajusta a altura da imagem */
+    display: inline-block; /* Certifica-se de que está alinhado corretamente */
+    margin-left: 0; /* Remove qualquer margem da esquerda */
+    margin-right: 20px; /* Espaçamento entre o logo e os itens do menu */
+}
+
+/* Adiciona espaçamento abaixo da navbar para o restante do conteúdo */
 body {
-    background-color: #004d65;
+    margin: 0; /* Remove margens padrão */
+    padding: 0;
+    padding-top: 80px; /* Altura da navbar (ajuste conforme necessário) */
 }

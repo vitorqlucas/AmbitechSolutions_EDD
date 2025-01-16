@@ -1,6 +1,14 @@
-<nav>
-    <a href="https://ambitech.com.br" target="_blank">Sobre nós</a>
-    <a href="">Planos</a>
-    <a href="">Contato</a>
-    <a href="{% url 'atualizacoes' %}">Atualizações</a>
+{% load static %}
+<nav class="navbar">
+    <div>
+        <img src="{% static 'images/logo.png' %}" alt="Logo Ambitech" class="logo">
+    </div>
+    <ul>
+        <li><a href="https://ambitech.com.br" target="_blank">Sobre nós</a></li>
+        <li><a href="#">Planos</a></li>
+        <li><a href="#">Contato</a></li>
+        <li><a href="{% url 'atualizacoes' %}">Atualizações</a></li>
+        <li><a href="{% url 'login_edd' %}">Login</a></li>
+
+    </ul>
 </nav>
