@@ -1,59 +1,7 @@
-#from django.shortcuts import render, redirect
-#from django.contrib.auth import authenticate, login
-#from django.contrib.auth.decorators import login_required
-#from django.contrib.auth.models import User
-#from .models import Cliente
-#
-#def login_edd(request):
-#    erro = False
-#
-#    # Verifica se o usuário já está autenticado
-#    if request.user.is_authenticated:
-#        return redirect('edd')
-#
-#    if request.method == "POST":
-#        email = request.POST.get("email")
-#        password = request.POST.get("password")
-#
-#        if email and password:
-#            try:
-#                # Verifica se o email pertence a algum usuário
-#                cliente = Cliente.objects.get(email=email)
-#                # Autentica o usuário usando o username e senha
-#                user = authenticate(request, username=cliente.username, password=password)
-#                if user:
-#                    login(request, user)
-#                    return redirect('edd')
-#                else:
-#                    erro = True
-#            except Cliente.DoesNotExist:
-#                erro = True
-#        else:
-#            erro = True
-#
-#    context = {"erro": erro}
-#    return render(request, 'user/login_edd.html', context)
-#
-#
-#@login_required
-#def edd(request):
-#    return render(request, 'edd.html')
-#
-#
-#@login_required
-#def atualizacoes(request):
-#    return render(request, 'atualizacoes.html')
-#
-#
-#def logout_view(request):
-#    from django.contrib.auth import logout
-#    logout(request)
-#    return redirect('login_edd')
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from .models import Cliente
 
 def login_edd(request):
     erro = False
