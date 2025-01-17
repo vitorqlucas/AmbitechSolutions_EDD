@@ -1,15 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.contrib.auth.models import AbstractUser
 # Users (já criado pelo Django)
 
-class Cliente(models.Model):
-    nome = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
+class Cliente(AbstractUser):
     cnpj_cpf = models.CharField(max_length=200)
-    senha = models.CharField(max_length=200)
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-    data_compra = models.DateField()
+    data_compra = models.DateField(null=True, blank=True)  # Permitir valores nulos
     ativo = models.BooleanField(default=True)
 
     def __str__(self):

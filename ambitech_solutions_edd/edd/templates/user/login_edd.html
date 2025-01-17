@@ -2,21 +2,23 @@
 {% load static %}
 {% block body %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
-<body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form action="/login" method="POST">
-            <div class="input-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
-            </div>
-            <button type="submit" class="login-btn">Entrar</button>
-        </form>
-    </div>
-</body>
-{% endblock %}
 
+{% if erro %}
+<h4 style="color: red;">Credenciais inválidas</h4>
+{% endif %}
+<div class="login-container">
+    <h1>Login</h1>
+    <form action="{% url 'login_edd' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+            <label for="username">E-mail</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu e-mail" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+        </div>
+        <button type="submit" class="login-btn">Entrar</button>
+    </form>
+</div>
+{% endblock %}

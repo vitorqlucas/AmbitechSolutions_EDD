@@ -7,5 +7,6 @@ from.views import *
 urlpatterns = [
     path('loginedd', login_edd, name='login_edd'), #link, função, nome interno da sua pagina
     path('edd', edd, name='edd'),
-    path('atualizacoes', atualizacoes, name='atualizacoes')
+    path('atualizacoes', atualizacoes, name='atualizacoes'),
+    path('logout', logout_view, name='logout'),  # Rota para logout
 ]
